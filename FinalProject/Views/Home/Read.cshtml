@@ -1,0 +1,99 @@
+﻿@model IEnumerable<FinalProject.Student>
+
+@{
+    ViewBag.Title = "Read";
+}
+
+<h2>Read</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentJobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GraduationYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GraduationSemester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfileImagePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GitHubLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkedInLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WantsToBeMentor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentJobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Organization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GraduationYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GraduationSemester)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfileImagePath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GitHubLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkedInLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WantsToBeMentor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentID })
+        </td>
+    </tr>
+}
+
+</table>
